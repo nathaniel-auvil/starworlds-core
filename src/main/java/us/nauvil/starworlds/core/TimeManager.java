@@ -1,3 +1,5 @@
+package us.nauvil.starworlds.core;
+
 import java.sql.Timestamp;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -11,8 +13,8 @@ public class TimeManager {
 
     public static void main(String[] args) throws InterruptedException {
 
-        TimedEvent t = new TimedEvent("Foundation", 10);
-        TimedEvent t2 = new TimedEvent("Barracks", 5);
+        TimedEvent t = new TimedEvent("Foundation", 3);
+        TimedEvent t2 = new TimedEvent("Barracks", 6);
 
 
         TimeManager timeManager = new TimeManager();

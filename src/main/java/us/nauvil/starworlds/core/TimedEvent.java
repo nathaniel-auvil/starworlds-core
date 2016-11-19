@@ -1,3 +1,5 @@
+package us.nauvil.starworlds.core;
+
 import java.sql.Timestamp;
 
 public class TimedEvent implements Runnable {
@@ -13,7 +15,7 @@ public class TimedEvent implements Runnable {
 
     @Override
     public String toString() {
-        return "TimedEvent{" +
+        return "us.nauvil.starworlds.core.TimedEvent{" +
                 "name='" + name + '\'' +
                 ", seconds=" + seconds +
                 '}';

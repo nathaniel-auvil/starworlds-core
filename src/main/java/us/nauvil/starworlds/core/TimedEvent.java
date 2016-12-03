@@ -15,7 +15,7 @@ public class TimedEvent implements Runnable {
 
     @Override
     public String toString() {
-        return "us.nauvil.starworlds.core.TimedEvent{" +
+        return "TimedEvent{" +
                 "name='" + name + '\'' +
                 ", seconds=" + seconds +
                 '}';

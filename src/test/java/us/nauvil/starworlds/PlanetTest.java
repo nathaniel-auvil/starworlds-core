@@ -7,7 +7,7 @@ public class PlanetTest {
 
     @Test
     public void testCreate() {
-        Planet p = Planet.createRandom();
+        Planet p = Planet.createRandom(1L);
         System.out.println(p);
     }
 

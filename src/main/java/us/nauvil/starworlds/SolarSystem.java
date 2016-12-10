@@ -22,13 +22,20 @@ public class SolarSystem {
         SolarSystem s = new SolarSystem();
         s.name = name;
 
-        int x = (int) Math.random() * MAX_PLANETS;
-        for (int i = 0; i < x; i++) {
-            s.planets.add(Planet.createRandom());
+        int x = (int) (Math.random() * MAX_PLANETS);
+        for (long i = 0; i < x; i++) {
+            s.planets.add(Planet.createRandom(i));
         }
 
         return s;
     }
 
-
+    @Override
+    public String toString() {
+        return "SolarSystem{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", planets=" + planets +
+                '}';
+    }
 }

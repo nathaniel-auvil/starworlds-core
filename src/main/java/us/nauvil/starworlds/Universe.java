@@ -1,19 +1,15 @@
 package us.nauvil.starworlds;
 
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Universe {
-    private static int MIN_SOLAR_SYSTEMS = 5;
-    private static int MAX_SOLAR_SYSTEMS = 20;
+    private static int WIDTH = 3;
+    private static int HEIGHT = 3;
 
-    private List<SolarSystem> solarSystems;
-
+    private Sector[][] sectors;
     private String name;
 
     public Universe() {
-        this.solarSystems = new ArrayList<SolarSystem>();
+        sectors = new Sector[WIDTH][HEIGHT];
     }
 
 
@@ -21,11 +17,10 @@ public class Universe {
         Universe u = new Universe();
         u.name = name;
 
-        int x = (int) (Math.random() * MAX_SOLAR_SYSTEMS);
-        x = Math.max(x, MIN_SOLAR_SYSTEMS);
-
-        for (int i = 0; i < x; i++) {
-            u.solarSystems.add(SolarSystem.createRandom("System-" + i));
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < HEIGHT; y++) {
+                u.sectors[x][y] = Sector.createRandom("Sector-" + x + "." + y);
+            }
         }
 
         return u;
@@ -33,9 +28,16 @@ public class Universe {
 
     @Override
     public String toString() {
-        return "Universe{" +
-                "solarSystems=" + solarSystems +
-                ", name='" + name + '\'' +
-                '}';
+        String s = "";
+
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < HEIGHT; y++) {
+                s += this.sectors[x][y];
+                s += "\n";
+            }
+        }
+
+
+        return s;
     }
 }

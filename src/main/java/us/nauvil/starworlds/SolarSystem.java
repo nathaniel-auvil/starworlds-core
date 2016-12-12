@@ -6,7 +6,7 @@ import java.util.List;
 
 public class SolarSystem {
 
-    private static int MAX_PLANETS = 4;
+    private static int MAX_PLANETS = 6;
 
     private Long id;
     private String name;
@@ -28,6 +28,10 @@ public class SolarSystem {
         }
 
         return s;
+    }
+
+    public int getNumberOfPlanets() {
+        return this.planets.size();
     }
 
     @Override

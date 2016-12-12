@@ -1,18 +1,22 @@
 package us.nauvil.starworlds;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Sector {
+    private static int WIDTH = 5;
+    private static int HEIGHT = 5;
+
     private static int MIN_SOLAR_SYSTEMS = 5;
     private static int MAX_SOLAR_SYSTEMS = 20;
 
     private String name;
-    private List<SolarSystem> solarSystems;
-    
-    
+    private SolarSystem[][] solarSystems;
+
+
     public Sector() {
-        this.solarSystems = new ArrayList<SolarSystem>();
+
+        int x = (int) (Math.random() * MAX_SOLAR_SYSTEMS);
+        x = Math.max(x, MIN_SOLAR_SYSTEMS);
+
+        this.solarSystems = new SolarSystem[WIDTH][HEIGHT];
     }
 
 
@@ -20,11 +24,11 @@ public class Sector {
         Sector u = new Sector();
         u.name = name;
 
-        int x = (int) (Math.random() * MAX_SOLAR_SYSTEMS);
-        x = Math.max(x, MIN_SOLAR_SYSTEMS);
-
-        for (int i = 0; i < x; i++) {
-            u.solarSystems.add(SolarSystem.createRandom("Sector-" + i));
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < HEIGHT; y++) {
+                SolarSystem s = SolarSystem.createRandom("System-" + x + "." + y);
+                if (s.getNumberOfPlanets() > 0) u.solarSystems[x][y] = s;
+            }
         }
 
         return u;
@@ -36,5 +40,13 @@ public class Sector {
                 "name='" + name + '\'' +
                 ", solarSystems=" + solarSystems +
                 '}';
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public SolarSystem[][] getSolarSystems() {
+        return solarSystems;
     }
 }

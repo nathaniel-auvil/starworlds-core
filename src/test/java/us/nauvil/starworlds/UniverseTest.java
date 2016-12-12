@@ -9,6 +9,8 @@ public class UniverseTest {
     public void testCreate() {
         Universe u = Universe.createRandom("test");
         System.out.println(u);
+
+        System.out.println(u.textUI());
     }
 
 }

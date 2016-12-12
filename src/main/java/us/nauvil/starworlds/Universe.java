@@ -37,7 +37,20 @@ public class Universe {
             }
         }
 
+        return s;
+    }
 
+    public String textUI() {
+        String s = "";
+/*
+        for (int x = 0; x < WIDTH; x++) {
+            for (int y = 0; y < HEIGHT; y++) {
+                s += this.sectors[x][y].textUI();
+            }
+
+            s += "\n";
+        }
+*/
         return s;
     }
 }

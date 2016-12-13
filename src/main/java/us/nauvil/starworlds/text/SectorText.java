@@ -10,9 +10,15 @@ public class SectorText {
     public String textUI(Sector sector) {
         String s = "";
 
+        s += "   ";
+        for (int x = 0; x < sector.getSolarSystems().length; x++) {
+            s += "  " + x + "  ";
+        }
+        s += "\n";
+
         for (int x = 0; x < sector.getSolarSystems().length; x++) {
 
-            s += "" + x + ":  ";
+            s += "" + x + "  ";
 
             for (int y = 0; y < sector.getSolarSystems()[x].length; y++) {
 

@@ -13,8 +13,8 @@ public class Sector {
 
     public Sector() {
 
-        int x = (int) (Math.random() * MAX_SOLAR_SYSTEMS);
-        x = Math.max(x, MIN_SOLAR_SYSTEMS);
+        //int x = (int) (Math.random() * MAX_SOLAR_SYSTEMS);
+       // x = Math.max(x, MIN_SOLAR_SYSTEMS);
 
         this.solarSystems = new SolarSystem[WIDTH][HEIGHT];
     }

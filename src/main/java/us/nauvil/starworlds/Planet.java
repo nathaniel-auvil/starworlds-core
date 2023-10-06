@@ -6,6 +6,7 @@ public class Planet {
     private Long id;
     private String name;
     private Integer metal;
+    private Integer crystal;
     private Integer gas;
 
 
@@ -15,6 +16,7 @@ public class Planet {
         p.id = id;
         p.name = "Planet-" + p.id;
         p.metal = (int) (Math.random() * 10);
+        p.crystal = (int) (Math.random() * 10);
         p.gas = (int) (Math.random() * 10);
         return p;
     }
@@ -25,6 +27,7 @@ public class Planet {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", metal=" + metal +
+                ", crystal=" + crystal +
                 ", gas=" + gas +
                 '}';
     }

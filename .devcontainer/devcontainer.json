@@ -9,6 +9,16 @@
 		"ghcr.io/devcontainers/features/java:1": {},
 		"ghcr.io/devcontainers-contrib/features/maven-sdkman:2": {},
 		"ghcr.io/itsmechlark/features/postgresql:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"mtxr.sqltools",
+				"mtxr.sqltools-driver-pg",
+				"vscjava.vscode-java-pack",
+				"ckolkman.vscode-postgres"
+			]
+		}
 	}
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.

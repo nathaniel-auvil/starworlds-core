@@ -16,7 +16,8 @@
 				"mtxr.sqltools",
 				"mtxr.sqltools-driver-pg",
 				"vscjava.vscode-java-pack",
-				"ckolkman.vscode-postgres"
+				"ckolkman.vscode-postgres",
+				"ms-azuretools.vscode-docker"
 			]
 		}
 	}

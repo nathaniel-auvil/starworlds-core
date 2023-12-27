@@ -19,10 +19,19 @@ public class StarWorlds {
 
 
 
+    /*******************************************************************************
+     * 
+     * @param ships
+     *******************************************************************************/
     public void sendMiningFleet( List<Ship> ships ) {
 
         if( logger.isDebugEnabled() ) {
             logger.debug("sending mining fleet: " + ships );
+        }
+
+        if(ships.size() == 0) {
+            logger.info("no ships passed to sendMiningFleet()");
+            return;
         }
 
     }

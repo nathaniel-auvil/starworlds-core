@@ -2,5 +2,10 @@ package us.nauvil.starworlds.ships;
 
 public class CargoShip extends Ship {
 
-    private Integer amount;
+
+    public CargoShip( Integer speed, Integer armor, Integer cargo ) {
+        super( speed, armor, cargo );
+    }
+
+    
 }

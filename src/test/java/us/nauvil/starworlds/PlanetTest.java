@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 
 public class PlanetTest {
 
-    Logger logger = LoggerFactory.getLogger( PlanetTest.class );
+    private static Logger logger = LoggerFactory.getLogger( PlanetTest.class );
 
 
     @Test

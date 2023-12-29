@@ -33,7 +33,7 @@ public class StarWorlds {
 
         */
         try {
-            Thread.sleep(100);
+            Thread.sleep(50);
         }
         catch(Throwable t ) {
             logger.error(null, t);
@@ -44,10 +44,12 @@ public class StarWorlds {
             return;
         }
 
-        Random r = new Random(System.currentTimeMillis());
+        Random r = new Random();
         int low = 0;
         int high = 100;
         int result = r.nextInt(high-low) + low;
+
+        
 
         /***
         if( logger.isDebugEnabled() ) {
@@ -55,19 +57,18 @@ public class StarWorlds {
         }
         **/
 
-        if( result < 10 ) {
+        if( result < 5 ) {
             logger.debug( "found nothing " + result );
         }
-        else if( result < 50 ) {
+        else if( result < 40 ) {
             logger.debug( "crystal " + result );
         }
-        else if( result < 90 ) {
+        else if( result < 95 ) {
             logger.debug( "metal " + result );
         }
         else {
             logger.debug( "exotics " + result );
         }
-
     }
 
 

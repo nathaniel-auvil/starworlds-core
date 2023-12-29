@@ -16,20 +16,34 @@ public class ResourceTable {
         this.resources.add(r);
     }
 
-    public void sort() {
+    public void process() {
         this.resources.sort(new ResourceComparator());
+
+        Iterator<Resource> i = this.resources.iterator();
+        Resource r = null;
+        double sum = 0;
+
+        while (i.hasNext()) {
+            r = i.next();
+
+            sum += r.getOdds();
+            r.setDerivedCeiling(sum);
+        }
+
+        if (sum != 1d) {
+//TODO
+        }
     }
 
-    public Resource getResource( double value ) {
+    public Resource getResource(double value) {
         Iterator<Resource> i = this.resources.iterator();
-        Resource prev= null, r= null;
-        
-        while( i.hasNext() ) {
-            r= i.next();
-            if( r.getOdds() > value ) {
+        Resource prev = null, r = null;
+
+        while (i.hasNext()) {
+            r = i.next();
+            if (r.getOdds() > value) {
                 return prev;
-            }
-            else {
+            } else {
                 prev = r;
             }
         }

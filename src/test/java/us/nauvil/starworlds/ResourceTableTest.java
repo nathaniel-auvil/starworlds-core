@@ -4,18 +4,31 @@ import org.junit.Test;
 
 public class ResourceTableTest {
 
-
     @Test
     public void sortResources() {
-        ResourceTable resourceTable= new ResourceTable();
-        resourceTable.addResource( new Resource("metal", 0.05d) );
-        resourceTable.addResource( new Resource("crystal", 0.04d) );
-        resourceTable.addResource( new Resource("deterium", 0.01d) );
+        ResourceTable resourceTable = new ResourceTable();
+        resourceTable.addResource(new Resource("metal", 50));
+        resourceTable.addResource(new Resource("crystal", 40));
+        resourceTable.addResource(new Resource("deterium", 10));
 
-        System.out.println( "BEFORE: " + resourceTable );
+        System.out.println("BEFORE: " + resourceTable);
 
-        resourceTable.sort();
+        resourceTable.process();
 
-        System.out.println( "AFTER: " + resourceTable );
+        System.out.println("AFTER: " + resourceTable);
+    }
+
+    @Test
+    public void getResource() {
+        ResourceTable resourceTable = new ResourceTable();
+        resourceTable.addResource(new Resource("metal", 50));
+        resourceTable.addResource(new Resource("crystal", 40));
+        resourceTable.addResource(new Resource("deterium", 10));
+        resourceTable.process();
+
+        double value = 1 / 100;
+        Resource r = resourceTable.getResource(value);
+
+        System.out.println("AFTER: " + r);
     }
 }
